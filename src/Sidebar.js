@@ -33,6 +33,10 @@ function Sidebar() {
                 </div>
 
                 <button className='submit-btn' type='submit'>Sort</button>
+                <br/>
+                <div className="surprise-container">
+                    <a target='_blank' href="https://youtu.be/dQw4w9WgXcQ" type='button' className='surprise-btn'>Surprise Me</a>
+                </div>
             </form>
         </div>
     );
