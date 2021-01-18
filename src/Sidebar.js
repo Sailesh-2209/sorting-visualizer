@@ -15,6 +15,24 @@ function Sidebar() {
                     <option className='form-option' value="quick">Quick Sort</option>
                     <option className='form-option' value="merge">Merge Sort</option>
                 </select>
+
+                <div className="slider-container">
+                    <label className='slider-label' htmlFor="range">
+                        Set Number of Values
+                    </label>
+                    <br/>
+                    <input 
+                        type="range" 
+                        min='50' 
+                        max='1000' 
+                        defaultValue='500'
+                        className='range-slider' 
+                        id='range' 
+                        name='range' 
+                    />
+                </div>
+
+                <button className='submit-btn' type='submit'>Sort</button>
             </form>
         </div>
     );

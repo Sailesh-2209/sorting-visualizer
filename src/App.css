@@ -63,13 +63,13 @@ html, body {
     font-family: 'Noto Sans SC', sans-serif;
     font-size: 25px;
     color: whitesmoke;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 .form-select {
     font-family: 'Noto Sans SC', sans-serif;
     font-size: 20px;
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left: 30px;
     border-radius: 10px;
     height: 40px;
     width: 250px;
@@ -79,4 +79,19 @@ html, body {
 .form-option {
     border: none;
     outline: none;
+}
+.slider-container {
+    margin: auto;
+    margin-top: 70px;
+}
+.slider-label {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-size: 25px;
+    color: whitesmoke;
+    margin-left: 30px;
+}
+.range-slider {
+    margin-top: 40px;
+    margin-left: 30px;
+    width: 250px;
 }
