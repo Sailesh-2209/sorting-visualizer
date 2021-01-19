@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Sidebar() {
+function Sidebar({ size, setSize }) {
     return(
         <div className="sidebar">
             <form className="form">
@@ -25,7 +25,8 @@ function Sidebar() {
                         type="range" 
                         min='50' 
                         max='1000' 
-                        defaultValue='500'
+                        value={size}
+                        onChange={(e) => setSize(e.target.value)}
                         className='range-slider' 
                         id='range' 
                         name='range' 
