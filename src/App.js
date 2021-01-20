@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Visualizer from './Visualizer';
@@ -6,8 +6,21 @@ import './App.css';
 
 function App() {
 
-  const [ size, setSize ] = useState(500);
-  console.log(size);
+  const [ size, setSize ] = useState(700);
+  const [ array, setArray ] = useState([]);
+  const [ sortingAlgorithm, setSortingAlgorithm ] = useState('bubble');
+
+  const makeArray = () => {
+    const tempArray = [];
+    for (let i = 0; i < size; i++) {
+      tempArray.push(Math.floor(Math.random() * 1050) + 50);
+    }
+    setArray(tempArray);
+  }
+
+  useEffect(() => {
+    makeArray();
+  }, [size]);
 
   const [ width, height ] = [ window.innerWidth, window.innerHeight ];
   let smallScreen = false;
@@ -25,8 +38,13 @@ function App() {
           <Navbar />
         </div>
         <div className="view-container">
-          <Sidebar size={size} setSize={setSize} />
-          <Visualizer />
+          <Sidebar 
+            size={size} 
+            setSize={setSize} 
+            sortingAlgorithm={sortingAlgorithm} 
+            setSortingAlgorithm={setSortingAlgorithm} 
+          />
+          <Visualizer array={array} />
         </div>
       </div>
     );

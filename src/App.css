@@ -132,3 +132,18 @@ html, body {
     outline: none;
     color: whitesmoke;
 }
+
+.bar {
+    width: 1px;
+    margin-right: 0.5px;
+    background-color: #2177f8;
+    float: left;
+}
+.bar-container {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}

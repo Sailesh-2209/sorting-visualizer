@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Sidebar({ size, setSize }) {
+function Sidebar({ size, setSize, sortingAlgorithm, setSortingAlgorithm }) {
     return(
         <div className="sidebar">
             <form className="form">
@@ -8,7 +8,7 @@ function Sidebar({ size, setSize }) {
                     Choose an Algorithm
                 </label>
                 <br/>
-                <select className='form-select' name="algortithm" id="algorithm">
+                <select className='form-select' name="algortithm" id="algorithm" value={sortingAlgorithm} onChange={(e) => setSortingAlgorithm(e.target.value)}>
                     <option className='form-option' value="bubble">Bubble Sort</option>
                     <option className='form-option' value="selection">Selection Sort</option>
                     <option className='form-option' value="insertion">Insertion Sort</option>
@@ -23,8 +23,8 @@ function Sidebar({ size, setSize }) {
                     <br/>
                     <input 
                         type="range" 
-                        min='50' 
-                        max='1000' 
+                        min='250' 
+                        max='700' 
                         value={size}
                         onChange={(e) => setSize(e.target.value)}
                         className='range-slider' 
