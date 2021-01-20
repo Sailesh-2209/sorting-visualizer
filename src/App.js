@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import Visualizer from './Visualizer';
+
 import './App.css';
+
+import bubbleSort from './algorithms/bubble';
 
 function App() {
 
-  const [ size, setSize ] = useState(700);
+  const [ size, setSize ] = useState(235);
   const [ array, setArray ] = useState([]);
   const [ sortingAlgorithm, setSortingAlgorithm ] = useState('bubble');
+  const [ sort, setSort ] = useState(false);
+  const element = useRef();
 
   const makeArray = () => {
     const tempArray = [];
@@ -18,9 +24,23 @@ function App() {
     setArray(tempArray);
   }
 
+  const startSort = () => {
+    let arrayCopy = [...array];
+    if (sort && sortingAlgorithm === 'bubble')  {
+      bubbleSort(arrayCopy, element);
+    }
+  }
+
   useEffect(() => {
     makeArray();
   }, [size]);
+
+  useEffect(() => {
+    startSort();
+    return () => {
+      setSort(false);
+    }
+  }, [sort]);
 
   const [ width, height ] = [ window.innerWidth, window.innerHeight ];
   let smallScreen = false;
@@ -43,8 +63,9 @@ function App() {
             setSize={setSize} 
             sortingAlgorithm={sortingAlgorithm} 
             setSortingAlgorithm={setSortingAlgorithm} 
+            setSort={setSort}
           />
-          <Visualizer array={array} />
+          <Visualizer array={array} element={element} />
         </div>
       </div>
     );

@@ -1,9 +1,15 @@
 import React from 'react';
 
-function Sidebar({ size, setSize, sortingAlgorithm, setSortingAlgorithm }) {
+function Sidebar({ size, setSize, sortingAlgorithm, setSortingAlgorithm, setSort }) {
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setSort(true);
+    }
+
     return(
         <div className="sidebar">
-            <form className="form">
+            <form onSubmit={(e) => handleSubmit(e)} className="form">
                 <label className='form-label' htmlFor="algorithm">
                     Choose an Algorithm
                 </label>
@@ -23,8 +29,8 @@ function Sidebar({ size, setSize, sortingAlgorithm, setSortingAlgorithm }) {
                     <br/>
                     <input 
                         type="range" 
-                        min='250' 
-                        max='700' 
+                        min='50' 
+                        max='235' 
                         value={size}
                         onChange={(e) => setSize(e.target.value)}
                         className='range-slider' 

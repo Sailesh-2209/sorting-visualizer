@@ -134,7 +134,7 @@ html, body {
 }
 
 .bar {
-    width: 1px;
+    width: 4px;
     margin-right: 0.5px;
     background-color: #2177f8;
     float: left;
@@ -146,4 +146,7 @@ html, body {
     margin-top: 10px;
     align-items: center;
     justify-content: center;
+}
+.active-element {
+    background-color: white;
 }
