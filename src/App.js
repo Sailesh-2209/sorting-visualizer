@@ -9,6 +9,7 @@ import './App.css';
 import bubbleSort from './algorithms/bubble';
 import mergeSort from './algorithms/merge';
 import selectionSort from './algorithms/selection';
+import insertionSort from './algorithms/insertion';
 
 function App() {
 
@@ -36,6 +37,9 @@ function App() {
     }
     else if (sort && sortingAlgorithm === 'selection') {
       selectionSort(arrayCopy, element);
+    }
+    else if (sort && sortingAlgorithm === 'insertion') {
+      insertionSort(arrayCopy, element);
     }
   }
 
