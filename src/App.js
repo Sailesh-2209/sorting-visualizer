@@ -7,6 +7,8 @@ import Visualizer from './Visualizer';
 import './App.css';
 
 import bubbleSort from './algorithms/bubble';
+import mergeSort from './algorithms/merge';
+import selectionSort from './algorithms/selection';
 
 function App() {
 
@@ -28,6 +30,12 @@ function App() {
     let arrayCopy = [...array];
     if (sort && sortingAlgorithm === 'bubble')  {
       bubbleSort(arrayCopy, element);
+    }
+    else if (sort && sortingAlgorithm === 'merge') {
+      mergeSort(arrayCopy, element);
+    }
+    else if (sort && sortingAlgorithm === 'selection') {
+      selectionSort(arrayCopy, element);
     }
   }
 
