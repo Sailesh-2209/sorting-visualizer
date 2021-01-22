@@ -10,8 +10,11 @@ import bubbleSort from './algorithms/bubble';
 import mergeSort from './algorithms/merge';
 import selectionSort from './algorithms/selection';
 import insertionSort from './algorithms/insertion';
+import quickSort from './algorithms/quick';
 
 function App() {
+
+  const [ width, height ] = [ window.innerWidth, window.innerHeight ];
 
   const [ size, setSize ] = useState(235);
   const [ array, setArray ] = useState([]);
@@ -41,6 +44,9 @@ function App() {
     else if (sort && sortingAlgorithm === 'insertion') {
       insertionSort(arrayCopy, element);
     }
+    else if (sort && sortingAlgorithm === 'quick') {
+      quickSort(arrayCopy, element);
+    }
   }
 
   useEffect(() => {
@@ -54,7 +60,6 @@ function App() {
     }
   }, [sort]);
 
-  const [ width, height ] = [ window.innerWidth, window.innerHeight ];
   let smallScreen = false;
   if (height < 650 || width < 1190 ) {
     smallScreen = true;
